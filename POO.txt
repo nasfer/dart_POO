@@ -1,0 +1,37 @@
+void main(){
+  
+  print ('classes');
+ 
+  // crie os objetos
+  
+  Carro mercedes = Carro('mercedes');
+  Carro fusca = Carro('fusca');
+  
+  //printa através do metodo get
+  print(fusca.valorDoCarro);
+  
+  //altere o valor do carro atraves do metodo setValue
+  int novoValor = 200;
+  fusca.setValue(novoValor);
+  print(fusca.valorDoCarro);
+  
+  
+}
+
+// essa classe é pública
+class Carro{
+  
+  final String modelo;
+  String _segredo = 'muito caro'; //atributo privado
+  int _valor = 100;  //atributo privado
+  
+  //contrutor p/a receber valores
+  Carro(this.modelo);
+  
+  //pegar valor do atributo privado para usar fora
+  int get valorDoCarro => _valor;
+  
+  //setar o valor ou seja mudar de um atributo privado 
+  void setValue(int valor)=> _valor = valor;
+  
+}
